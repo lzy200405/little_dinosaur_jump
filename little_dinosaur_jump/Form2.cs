@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace little_dinosaur_jump
 {
-    public partial class Form2 : Form
+    public partial class 小恐龙快跑 : Form
     {
      
         private Dinosaur dinosaur;
@@ -22,7 +22,7 @@ namespace little_dinosaur_jump
         private int backgroundX;
         private int backgroundY;
 
-        public Form2()
+        public 小恐龙快跑()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -73,10 +73,12 @@ namespace little_dinosaur_jump
             base.OnPaint(e);
 
             // 绘制背景
-            for (int i = 0; i <= 1; i++)
+            if ((backgroundX+backgroundImage.Width) >=this.Width )
             {
-                e.Graphics.DrawImage(backgroundImage, backgroundX + i * this.Width, backgroundY, this.Width, backgroundImage.Height);
+                backgroundX -= 20;
+                e.Graphics.DrawImage(backgroundImage, backgroundX - 20, backgroundY, backgroundImage.Width, backgroundImage.Height);
             }
+            else { backgroundX = 0; }
             if (!isGameOver)
             {
                 dinosaur.Draw(e.Graphics);
@@ -127,12 +129,17 @@ namespace little_dinosaur_jump
             gameTimer.Start();
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// 初始化游戏
         /// </summary>
-     
 
-    
+
+
 
     }
 }

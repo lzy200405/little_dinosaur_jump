@@ -17,7 +17,7 @@ namespace little_dinosaur_jump
         public Form1()
         {
             InitializeComponent();
-            Form2 form2 = new Form2();
+            小恐龙快跑 form2 = new 小恐龙快跑();
             form2.ShowDialog();
         }
 
@@ -38,7 +38,7 @@ namespace little_dinosaur_jump
             if (loginBll.QueryLoginInfo(username, md5Password))
             {
                 Hide();
-                Form2 form2 = new Form2();
+                小恐龙快跑 form2 = new 小恐龙快跑();
                 form2.ShowDialog();
             }
             else
