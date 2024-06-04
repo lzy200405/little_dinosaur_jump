@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace little_dinosaur_jump
 {
-    public partial class Form3 : Form
+    public partial class Register : Form
     {
         LoginBLL loginBll = new LoginBLL();
-        public Form3()
+        public Register()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace little_dinosaur_jump
             string password_again = tbx_password2.Text;
             string md5Password1 = Md5Helper.GetMd5(password);
             string md5Password2 = Md5Helper.GetMd5(password_again);
-            Login login = new Login();
+            Model.Login login = new Model.Login();
             login.User_name = username;
             login.Password = md5Password1;
             if (loginBll.QueryLoginInfo(username))

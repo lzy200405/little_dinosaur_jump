@@ -12,13 +12,11 @@ using Common;
 
 namespace little_dinosaur_jump
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
-            小恐龙快跑 form2 = new 小恐龙快跑();
-            form2.ShowDialog();
         }
 
         private LoginBLL loginBll = new LoginBLL();
@@ -35,10 +33,11 @@ namespace little_dinosaur_jump
             }
 
             string md5Password = Md5Helper.GetMd5(password);
+
             if (loginBll.QueryLoginInfo(username, md5Password))
             {
                 Hide();
-                小恐龙快跑 form2 = new 小恐龙快跑();
+                DinosaurJump form2 = new DinosaurJump(username);
                 form2.ShowDialog();
             }
             else
@@ -54,14 +53,14 @@ namespace little_dinosaur_jump
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            Register form3 = new Register();
             form3.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

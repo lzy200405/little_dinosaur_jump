@@ -1,6 +1,6 @@
 ﻿namespace little_dinosaur_jump
 {
-    partial class 小恐龙快跑
+    partial class Rank
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // 小恐龙快跑
+            // Rank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1178, 644);
-            this.Name = "小恐龙快跑";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Rank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "小恐龙快跑";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Text = "Rank";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Rank_FormClosing);
             this.ResumeLayout(false);
 
         }

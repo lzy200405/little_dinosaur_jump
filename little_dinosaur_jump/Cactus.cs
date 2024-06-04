@@ -53,7 +53,7 @@ namespace little_dinosaur_jump
             X -= 20; // 向左移动仙人掌
             if (X < -spriteRects[currentFrame].Width)
             {
-                X = 600; //重置到右边缘
+                X = 800; //重置到右边缘
                 Random random = new Random();
                 currentFrame = random.Next() % 3;
             }

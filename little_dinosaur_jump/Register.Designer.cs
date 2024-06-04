@@ -1,6 +1,6 @@
 ﻿namespace little_dinosaur_jump
 {
-    partial class Form3
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
