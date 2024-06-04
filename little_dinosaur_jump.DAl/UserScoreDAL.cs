@@ -11,6 +11,17 @@ namespace little_dinosaur_jump.DAl
 {
     public class UserScoreDAL
     {
+        public List<Score> QueryAll()
+        {
+            DbContext dbContext = new MyDbContext();
+            //return dbContext.Set<Score>().ToList();
+            List<Score> scores = dbContext.Set<Score>().ToList();
+
+            // 按照Score属性进行升序排序
+            return scores.OrderByDescending(s=>s.Score1).ToList();
+            //return scores;
+        }
+
         //查询用户
         public Score QueryScore(string username)
         {

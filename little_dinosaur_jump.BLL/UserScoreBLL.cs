@@ -11,6 +11,12 @@ namespace little_dinosaur_jump.BLL
     public class UserScoreBLL
     {
         private UserScoreDAL userScoreDAl = new UserScoreDAL();
+
+        public List<Score> GetAll()
+        {
+            return userScoreDAl.QueryAll();
+        }
+
         public bool UpdateScore(Score score)
         {
             return userScoreDAl.WriteHighestScore(score) > 0 ? true : false;

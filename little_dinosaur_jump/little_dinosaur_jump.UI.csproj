@@ -51,6 +51,16 @@
   <ItemGroup>
     <Compile Include="Cactus.cs" />
     <Compile Include="Dinosaur.cs" />
+    <Compile Include="little_dinosaurDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>little_dinosaurDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="little_dinosaurDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>little_dinosaurDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +118,28 @@
     <EmbeddedResource Include="Store.resx">
       <DependentUpon>Store.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="little_dinosaurDataSet.xsc">
+      <DependentUpon>little_dinosaurDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="little_dinosaurDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>little_dinosaurDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="little_dinosaurDataSet.xss">
+      <DependentUpon>little_dinosaurDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="little_dinosaurDataSet1.xsc">
+      <DependentUpon>little_dinosaurDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="little_dinosaurDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>little_dinosaurDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="little_dinosaurDataSet1.xss">
+      <DependentUpon>little_dinosaurDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -192,7 +192,10 @@ namespace little_dinosaur_jump
         private void GamePause(object sender, EventArgs e)
         {
             // 切换暂停状态
-            isPaused = !isPaused;
+            if (!isPaused)
+            {
+                isPaused = true;
+            }
 
             if (isPaused)
             {
@@ -295,18 +298,15 @@ namespace little_dinosaur_jump
         private void 商店ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            Store store =new Store();
+            Store store =new Store(this);
             store.Show();
-            if(store == null) { ShowDialog(); }
         }
 
         private void 排行榜ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            Rank rank = new Rank();
+            Rank rank = new Rank(this);
             rank.Show();
-            if (rank == null) { ShowDialog(); }
-
         }
 
 

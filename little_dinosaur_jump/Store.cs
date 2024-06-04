@@ -10,19 +10,26 @@ using System.Windows.Forms;
 
 namespace little_dinosaur_jump
 {
+   
     public partial class Store : Form
     {
+        private DinosaurJump dj;
         public Store()
         {
             
             InitializeComponent();
         }
+        public Store(DinosaurJump currentdj) 
+        {
+            InitializeComponent();
+            dj= currentdj;
+        }
+
 
 
         private void Store_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DinosaurJump form2 = new DinosaurJump();
-            form2.Show();
+            dj.Show();
         }
     }
 }
