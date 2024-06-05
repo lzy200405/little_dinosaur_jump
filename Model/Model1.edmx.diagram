@@ -7,6 +7,7 @@
       <Diagram DiagramId="8a965698ee54442e82d2d5ee6c1afd84" Name="Diagram1">
         <EntityTypeShape EntityType="little_dinosaurModel.Login" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="little_dinosaurModel.Score" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="little_dinosaurModel.Store" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

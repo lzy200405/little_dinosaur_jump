@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="LoginBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreBLL.cs" />
     <Compile Include="UserScoreBLL.cs" />
   </ItemGroup>
   <ItemGroup>

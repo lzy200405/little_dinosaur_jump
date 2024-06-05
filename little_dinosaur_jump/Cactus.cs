@@ -59,6 +59,13 @@ namespace little_dinosaur_jump
             }
         }
 
+        public void reset()
+        {
+            X = 800; //重置到右边缘
+            Random random = new Random();
+            currentFrame = random.Next() % 3;
+        }
+
         public Rectangle GetBounds()
         {
             return new Rectangle(X, Y, spriteRects[currentFrame].Width, spriteRects[currentFrame].Height);

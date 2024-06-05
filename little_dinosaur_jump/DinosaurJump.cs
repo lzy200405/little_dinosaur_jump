@@ -16,12 +16,13 @@ namespace little_dinosaur_jump
     public partial class DinosaurJump : Form
     {
         UserScoreBLL userscorebll=new UserScoreBLL();
+        StoreBLL storebll=new StoreBLL();
 
         private Dinosaur dinosaur;
         private int dinosaurnum;
         private Cactus cactus;
         private int score;
-        private string username;
+        public string username;
 
         private Timer gameTimer;
         
@@ -55,6 +56,27 @@ namespace little_dinosaur_jump
 
         }
 
+        public DinosaurJump(string username)
+        {
+            this.username = username;
+
+            InitializeComponent();
+            InitGame();
+            this.DoubleBuffered = true;
+
+            backgroundImage = Properties.Resources.BackgroundImageLight; // 替换为你的背景图像资源名称
+            backgroundX = 0;
+            backgroundY = 200; // 设置背景图片的初始Y坐标
+            dinosaurnum = 0;    //设置初始小恐龙图片
+
+            gamerover = Properties.Resources.gameover;
+            restart = Properties.Resources.restart;
+
+
+            // 绑定菜单项点击事件为游戏停止
+            菜单.Click += GamePause;
+        }
+
         #region  游戏初始化
         private void InitGame()
         {
@@ -82,26 +104,6 @@ namespace little_dinosaur_jump
         }
         #endregion
 
-        public DinosaurJump(string username)
-        {
-            this.username = username;
-
-            InitializeComponent();
-            InitGame();
-            this.DoubleBuffered = true;
-
-            backgroundImage = Properties.Resources.BackgroundImageLight; // 替换为你的背景图像资源名称
-            backgroundX = 0;
-            backgroundY = 200; // 设置背景图片的初始Y坐标
-            dinosaurnum = 0;    //设置初始小恐龙图片
-
-            gamerover = Properties.Resources.gameover;
-            restart = Properties.Resources.restart;
-
-
-            // 绑定菜单项点击事件为游戏停止
-            菜单.Click += GamePause;
-        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -109,7 +111,7 @@ namespace little_dinosaur_jump
 
        
 
-
+        //游戏初始提示
         private void 提示_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Space)
@@ -188,7 +190,7 @@ namespace little_dinosaur_jump
 
         #endregion
 
-
+        //暂停游戏
         private void GamePause(object sender, EventArgs e)
         {
             // 切换暂停状态
@@ -207,7 +209,7 @@ namespace little_dinosaur_jump
             }
         }
 
-
+        //点击主页面继续游戏
         private void MainForm_Click(object sender, EventArgs e)
         {
             if (isPaused)
@@ -218,7 +220,8 @@ namespace little_dinosaur_jump
             }
         }
 
-
+        //游戏进行时是跳跃
+        //游戏结束时是重新开始
         protected override void OnKeyDown(KeyEventArgs e) //触发按键
         {
             base.OnKeyDown(e);
@@ -256,7 +259,26 @@ namespace little_dinosaur_jump
             Score newscore = new Score();
             newscore.User_name = username;
             newscore.Score1=Convert.ToInt32(ScoreText.Text);
-            userscorebll.UpdateScore(newscore);
+            DialogResult result = MessageBox.Show("游戏结束。是否选择复活？","", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                if(storebll.UseCoin(username))
+                {
+                    cactus.reset();
+                    isGameOver=false;
+                    gameTimer.Start();
+                }
+                else
+                {
+                    MessageBox.Show("复活币数量不足", "提示",MessageBoxButtons.OK);
+                }
+            }
+            else 
+            {
+                userscorebll.UpdateScore(newscore); //更新分数
+                storebll.GetMoney(username, newscore.Score1);//分数转积分
+            }
+            
 
         }
         #endregion
@@ -298,7 +320,7 @@ namespace little_dinosaur_jump
         private void 商店ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            Store store =new Store(this);
+            Store store =new Store(this,username);
             store.Show();
         }
 
@@ -312,6 +334,7 @@ namespace little_dinosaur_jump
 
         #endregion
 
+        //退出游戏
         private void DinosaurJump_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);

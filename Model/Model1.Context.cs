@@ -27,5 +27,6 @@ namespace Model
     
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Score> Score { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
     }
 }
