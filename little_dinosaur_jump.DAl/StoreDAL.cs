@@ -54,6 +54,15 @@ namespace little_dinosaur_jump.DAl
         {
             DbContext dbContext = new MyDbContext();
             Store store = dbContext.Set<Store>().Where(data => data.User_Name == username).FirstOrDefault();
+            if (store == null)
+            {
+                Store newstore = new Store();
+                newstore.User_Name = username; ;
+                newstore.Money = 0;
+                dbContext.Set<Store>().AddOrUpdate(newstore);
+                store = newstore;
+            }
+            dbContext.SaveChanges(); // 保存更改
             if (store.Money - num * 100 > 0)
             {
                 store.Money -= num * 100;
@@ -83,6 +92,15 @@ namespace little_dinosaur_jump.DAl
         {
             DbContext dbContext = new MyDbContext();
             Store store = dbContext.Set<Store>().Where(data => data.User_Name == username).FirstOrDefault();
+            if (store == null)
+            {
+                Store newstore = new Store();
+                newstore.User_Name = username; ;
+                newstore.Money = 0;
+                dbContext.Set<Store>().AddOrUpdate(newstore);
+                store = newstore;
+            }
+            dbContext.SaveChanges(); // 保存更改
             if (store.CoinNum < 1)
             {
                 return false;
