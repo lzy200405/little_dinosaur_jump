@@ -86,14 +86,6 @@ namespace little_dinosaur_jump
                 }
         }
 
-        private void EndMusic()
-        {
-            if (isBackgroundMusicPlaying)
-            {
-                    backgroundPlayer.Stop();
-                    isBackgroundMusicPlaying = false;
-            }
-        }
         public DinosaurJump(string username)
         {
             this.username = username;
