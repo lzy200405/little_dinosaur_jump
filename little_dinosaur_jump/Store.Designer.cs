@@ -67,7 +67,7 @@
             this.Coindetial.BackColor = System.Drawing.Color.White;
             this.Coindetial.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Coindetial.Enabled = false;
-            this.Coindetial.Location = new System.Drawing.Point(399, 202);
+            this.Coindetial.Location = new System.Drawing.Point(386, 255);
             this.Coindetial.Margin = new System.Windows.Forms.Padding(5);
             this.Coindetial.Name = "Coindetial";
             this.Coindetial.ReadOnly = true;

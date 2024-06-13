@@ -60,7 +60,13 @@ namespace little_dinosaur_jump
 
         private void Login_Load(object sender, EventArgs e)
         {
+            string imagePath = @"E:\Visual Studio\little_dinosaur_jump\little_dinosaur_jump\Resources\login.jpg"; // 用实际的文件路径替换这里的路径
 
+            Image backgroundImage = Image.FromFile(imagePath);
+
+            // 设置窗体背景图片并调整布局
+            this.BackgroundImage = backgroundImage;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

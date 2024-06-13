@@ -22,7 +22,7 @@ namespace little_dinosaur_jump.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace little_dinosaur_jump.Properties {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("little_dinosaur_jump.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace little_dinosaur_jump.Properties {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace little_dinosaur_jump.Properties {
         }
         
         /// <summary>
+        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream background_music {
+            get {
+                return ResourceManager.GetStream("background_music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap BackgroundImage {
+        public static System.Drawing.Bitmap BackgroundImage {
             get {
                 object obj = ResourceManager.GetObject("BackgroundImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +82,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap BackgroundImageLight {
+        public static System.Drawing.Bitmap BackgroundImageLight {
             get {
                 object obj = ResourceManager.GetObject("BackgroundImageLight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +92,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap dino {
+        public static System.Drawing.Bitmap dino {
             get {
                 object obj = ResourceManager.GetObject("dino", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +102,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap DinoSpriteSheet {
+        public static System.Drawing.Bitmap DinoSpriteSheet {
             get {
                 object obj = ResourceManager.GetObject("DinoSpriteSheet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +112,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap gameover {
+        public static System.Drawing.Bitmap gameover {
             get {
                 object obj = ResourceManager.GetObject("gameover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +122,17 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap naruto_run {
+        public static System.Drawing.Bitmap login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap naruto_run {
             get {
                 object obj = ResourceManager.GetObject("naruto_run", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +142,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap pikachu_cours {
+        public static System.Drawing.Bitmap pikachu_cours {
             get {
                 object obj = ResourceManager.GetObject("pikachu_cours", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +152,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap restart {
+        public static System.Drawing.Bitmap restart {
             get {
                 object obj = ResourceManager.GetObject("restart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +162,7 @@ namespace little_dinosaur_jump.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 小仙人掌 {
+        public static System.Drawing.Bitmap 小仙人掌 {
             get {
                 object obj = ResourceManager.GetObject("小仙人掌", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

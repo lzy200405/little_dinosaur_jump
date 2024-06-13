@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using System.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace little_dinosaur_jump
@@ -36,10 +37,16 @@ namespace little_dinosaur_jump
         private bool isGameOver;
         private bool isPaused;
 
+        private SoundPlayer backgroundPlayer;
+        private bool isBackgroundMusicPlaying; // 标志位
         public DinosaurJump()
         {
             InitializeComponent();
+
+            InitializeBackgroundMusic();
             InitGame();
+            
+
             this.DoubleBuffered = true;
 
             backgroundImage = Properties.Resources.BackgroundImageLight; // 替换为你的背景图像资源名称
@@ -56,12 +63,48 @@ namespace little_dinosaur_jump
 
         }
 
+        // 加载背景音乐文件
+        private void InitializeBackgroundMusic()
+        {
+
+            // 检查资源文件是否存在
+            if (Properties.Resources.background_music != null)
+            {
+                // 初始化SoundPlayer
+
+
+                // 加载背景音乐
+                string musicPath = @"E:\Visual Studio\little_dinosaur_jump\little_dinosaur_jump\Resources\background_music.wav"; // 替换为你的背景音乐文件路径
+                backgroundPlayer = new SoundPlayer(musicPath);
+
+            }
+
+        }
+        private void StartMusic()
+        {
+                if (!isBackgroundMusicPlaying)
+                { 
+                    backgroundPlayer.PlayLooping();
+                    isBackgroundMusicPlaying=true;
+                }
+        }
+
+        private void EndMusic()
+        {
+            if (isBackgroundMusicPlaying)
+            {
+                    backgroundPlayer.Stop();
+                    isBackgroundMusicPlaying = false;
+            }
+        }
         public DinosaurJump(string username)
         {
             this.username = username;
 
             InitializeComponent();
+            InitializeBackgroundMusic();
             InitGame();
+
             this.DoubleBuffered = true;
 
             backgroundImage = Properties.Resources.BackgroundImageLight; // 替换为你的背景图像资源名称
@@ -84,7 +127,7 @@ namespace little_dinosaur_jump
             gameTimer.Interval = 50; // 设置动画帧切换间隔时间（毫秒）
             gameTimer.Tick += GameTimer_Tick;
             gameTimer.Stop();
-
+            
 
             dinosaur = new Dinosaur();
             cactus = new Cactus();
@@ -94,6 +137,7 @@ namespace little_dinosaur_jump
             backgroundY = 200; // 设置背景图片的初始Y坐标
             isPaused = true;
             isGameOver = false;
+            isBackgroundMusicPlaying = false;
 
             score = 0;
 
@@ -132,11 +176,18 @@ namespace little_dinosaur_jump
             UpdateBackground(); // 更新背景位置
 
             this.Invalidate(); // 触发 Paint 事件
+
+            if (!isPaused)
+            {
+                StartMusic();
+            }
+
             if (CheckCollision())
             {
                 GameOver();
             }
             this.Invalidate(); // 触发 Paint 事件
+
         }
 
         private void UpdateBackground()             //更新背景
@@ -202,6 +253,7 @@ namespace little_dinosaur_jump
             if (isPaused)
             {
                 gameTimer.Stop(); // 停止游戏计时器
+                EndMusic();
             }
             else
             {
@@ -256,6 +308,7 @@ namespace little_dinosaur_jump
         {
             gameTimer.Stop();
             isGameOver = true;
+            EndMusic(); // 游戏结束时停止背景音乐
             Score newscore = new Score();
             newscore.User_name = username;
             newscore.Score1=Convert.ToInt32(ScoreText.Text);
@@ -267,6 +320,7 @@ namespace little_dinosaur_jump
                     cactus.reset();
                     isGameOver=false;
                     gameTimer.Start();
+                    StartMusic(); // 复活时重新播放背景音乐
                 }
                 else
                 {
@@ -275,6 +329,7 @@ namespace little_dinosaur_jump
             }
             else 
             {
+                EndMusic();
                 userscorebll.UpdateScore(newscore); //更新分数
                 storebll.GetMoney(username, newscore.Score1);//分数转积分
             }
