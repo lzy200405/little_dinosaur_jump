@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.菜单 = new System.Windows.Forms.ToolStripMenuItem();
             this.切换角色ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

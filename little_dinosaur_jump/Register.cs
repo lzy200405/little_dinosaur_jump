@@ -52,6 +52,15 @@ namespace little_dinosaur_jump
         {
             Close();
         }
+        private void Register_Load(object sender, EventArgs e)
+        {
+            string imagePath = @"C:\Users\11484\OneDrive\Desktop\little_dinosaur_jump-master2\little_dinosaur_jump-master\login.jpg"; // 用实际的文件路径替换这里的路径
 
+            Image backgroundImage = Image.FromFile(imagePath);
+
+            // 设置窗体背景图片并调整布局
+            this.BackgroundImage = backgroundImage;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
     }
 }

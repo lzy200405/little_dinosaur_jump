@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rank));
             this.little_dinosaurDataSet = new little_dinosaur_jump.little_dinosaurDataSet();
             this.scoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scoreTableAdapter = new little_dinosaur_jump.little_dinosaurDataSetTableAdapters.ScoreTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.little_dinosaurDataSet1 = new little_dinosaur_jump.little_dinosaurDataSet1();
-            this.scoreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.scoreTableAdapter1 = new little_dinosaur_jump.little_dinosaurDataSet1TableAdapters.ScoreTableAdapter();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scoreBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.little_dinosaurDataSet1 = new little_dinosaur_jump.little_dinosaurDataSet1();
+            this.scoreTableAdapter1 = new little_dinosaur_jump.little_dinosaurDataSet1TableAdapters.ScoreTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // little_dinosaurDataSet
@@ -65,33 +68,20 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.usernameDataGridViewTextBoxColumn,
             this.scoreDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.scoreBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 140);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 298);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // little_dinosaurDataSet1
-            // 
-            this.little_dinosaurDataSet1.DataSetName = "little_dinosaurDataSet1";
-            this.little_dinosaurDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // scoreBindingSource1
-            // 
-            this.scoreBindingSource1.DataMember = "Score";
-            this.scoreBindingSource1.DataSource = this.little_dinosaurDataSet1;
-            // 
-            // scoreTableAdapter1
-            // 
-            this.scoreTableAdapter1.ClearBeforeFill = true;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -111,12 +101,36 @@
             this.scoreDataGridViewTextBoxColumn.ReadOnly = true;
             this.scoreDataGridViewTextBoxColumn.Width = 150;
             // 
+            // scoreBindingSource1
+            // 
+            this.scoreBindingSource1.DataMember = "Score";
+            this.scoreBindingSource1.DataSource = this.little_dinosaurDataSet1;
+            // 
+            // little_dinosaurDataSet1
+            // 
+            this.little_dinosaurDataSet1.DataSetName = "little_dinosaurDataSet1";
+            this.little_dinosaurDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // scoreTableAdapter1
+            // 
+            this.scoreTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(162, -8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(493, 118);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Rank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Rank";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -126,8 +140,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scoreBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.little_dinosaurDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,5 +157,6 @@
         private little_dinosaurDataSet1TableAdapters.ScoreTableAdapter scoreTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn scoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
