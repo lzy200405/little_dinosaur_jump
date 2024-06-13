@@ -70,16 +70,13 @@ namespace little_dinosaur_jump
             // 检查资源文件是否存在
             if (Properties.Resources.background_music != null)
             {
-                // 初始化SoundPlayer
-
-
                 // 加载背景音乐
-                string musicPath = @"E:\Visual Studio\little_dinosaur_jump\little_dinosaur_jump\Resources\background_music.wav"; // 替换为你的背景音乐文件路径
-                backgroundPlayer = new SoundPlayer(musicPath);
+                backgroundPlayer = new SoundPlayer(Properties.Resources.background_music);
 
             }
 
         }
+
         private void StartMusic()
         {
                 if (!isBackgroundMusicPlaying)
