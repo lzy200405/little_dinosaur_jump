@@ -203,5 +203,11 @@
   <ItemGroup>
     <None Include="Resources\background_music.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\43C5D55D32799FBF9C82851540C57374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mianfeiziti_com_1717997498000.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

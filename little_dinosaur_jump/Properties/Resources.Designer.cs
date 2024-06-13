@@ -61,11 +61,12 @@ namespace little_dinosaur_jump.Properties {
         }
         
         /// <summary>
-        ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.IO.UnmanagedMemoryStream background_music {
+        public static System.Drawing.Bitmap _43C5D55D32799FBF9C82851540C57374 {
             get {
-                return ResourceManager.GetStream("background_music", resourceCulture);
+                object obj = ResourceManager.GetObject("_43C5D55D32799FBF9C82851540C57374", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -125,6 +126,16 @@ namespace little_dinosaur_jump.Properties {
         public static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap mianfeiziti_com_1717997498000 {
+            get {
+                object obj = ResourceManager.GetObject("mianfeiziti_com_1717997498000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

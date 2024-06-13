@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rank));
             this.little_dinosaurDataSet = new little_dinosaur_jump.little_dinosaurDataSet();
             this.scoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.scoreTableAdapter = new little_dinosaur_jump.little_dinosaurDataSetTableAdapters.ScoreTableAdapter();
@@ -117,7 +116,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::little_dinosaur_jump.Properties.Resources._43C5D55D32799FBF9C82851540C57374;
             this.pictureBox1.Location = new System.Drawing.Point(162, -8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(493, 118);
