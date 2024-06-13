@@ -61,8 +61,6 @@ namespace little_dinosaur_jump
 
         private void Login_Load(object sender, EventArgs e)
         {
-            string imagePath = @"C:\Users\11484\OneDrive\Desktop\little_dinosaur_jump-master2\little_dinosaur_jump-master\login.jpg"; // 用实际的文件路径替换这里的路径
-
             Image backgroundImage = Properties.Resources.login;
 
             // 设置窗体背景图片并调整布局

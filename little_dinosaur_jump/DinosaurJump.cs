@@ -79,11 +79,20 @@ namespace little_dinosaur_jump
 
         private void StartMusic()
         {
-                if (!isBackgroundMusicPlaying)
-                { 
-                    backgroundPlayer.PlayLooping();
-                    isBackgroundMusicPlaying=true;
-                }
+            if (!isBackgroundMusicPlaying)
+            {
+                backgroundPlayer.PlayLooping();
+                isBackgroundMusicPlaying = true;
+            }
+        }
+
+        private void EndMusic()
+        {
+            if (isBackgroundMusicPlaying)
+            {
+                backgroundPlayer.Stop();
+                isBackgroundMusicPlaying = false;
+            }
         }
 
         public DinosaurJump(string username)
