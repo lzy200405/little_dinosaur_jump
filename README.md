@@ -1,6 +1,9 @@
 # 小恐龙快跑
 
-这是一个模仿 Chrome 浏览器离线小游戏“恐龙快跑”的 Windows 应用程序，作为 Windows 程序设计课程的期末作业。
+![Language](https://img.shields.io/badge/language-C%23-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+“小恐龙快跑”是一个模仿 Chrome 浏览器离线小游戏“恐龙快跑”的 Windows 应用程序，作为 Windows 程序设计课程的成果。
 
 ## 软件架构
 
@@ -37,7 +40,18 @@
 
 请确保在运行项目之前，已正确安装并配置所需的开发工具和数据库环境。
 
-如需更多信息，请访问项目的 GitHub 页面：
 
+## 贡献
+
+欢迎对本项目提出建议或贡献代码。请遵循以下步骤：
+
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个 Pull Request
+
+
+如需更多信息，请访问项目的 GitHub 页面：
 
 
